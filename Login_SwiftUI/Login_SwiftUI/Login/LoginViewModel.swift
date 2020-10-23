@@ -10,6 +10,6 @@ import SwiftUI
 class LoginViewModel: ObservableObject {
     @Published var id: String = ""
     @Published var password: String = ""
+    @Published var isValidText: Bool = false
     
-    @Published var isInputError: Bool = true
 }
