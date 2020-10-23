@@ -25,6 +25,11 @@ struct LoginView: View {
             TextField("パスワードを入力", text: $viewModel.password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .frame(width: 300)
+            
+            if !viewModel.isValidText {
+                Text("半角英数字で入力してください")
+                    .foregroundColor(Color.red)
+            }
         })
     }
 }
