@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		FDA1D1EA2540460B00BCD900 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA1D1E92540460B00BCD900 /* AppDelegate.swift */; };
 		FDA1D1EC2540460B00BCD900 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA1D1EB2540460B00BCD900 /* SceneDelegate.swift */; };
-		FDA1D1EE2540460B00BCD900 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA1D1ED2540460B00BCD900 /* ContentView.swift */; };
+		FDA1D1EE2540460B00BCD900 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA1D1ED2540460B00BCD900 /* LoginView.swift */; };
 		FDA1D1F02540461000BCD900 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDA1D1EF2540461000BCD900 /* Assets.xcassets */; };
 		FDA1D1F32540461000BCD900 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDA1D1F22540461000BCD900 /* Preview Assets.xcassets */; };
 		FDA1D1F62540461000BCD900 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDA1D1F42540461000BCD900 /* LaunchScreen.storyboard */; };
@@ -38,7 +38,7 @@
 		FDA1D1E62540460B00BCD900 /* Login_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Login_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDA1D1E92540460B00BCD900 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDA1D1EB2540460B00BCD900 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FDA1D1ED2540460B00BCD900 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FDA1D1ED2540460B00BCD900 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FDA1D1EF2540461000BCD900 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDA1D1F22540461000BCD900 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FDA1D1F52540461000BCD900 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 			children = (
 				FDA1D1E92540460B00BCD900 /* AppDelegate.swift */,
 				FDA1D1EB2540460B00BCD900 /* SceneDelegate.swift */,
-				FDA1D1ED2540460B00BCD900 /* ContentView.swift */,
+				FDA1D1ED2540460B00BCD900 /* LoginView.swift */,
 				FDA1D1EF2540461000BCD900 /* Assets.xcassets */,
 				FDA1D1F42540461000BCD900 /* LaunchScreen.storyboard */,
 				FDA1D1F72540461000BCD900 /* Info.plist */,
@@ -268,7 +268,7 @@
 			files = (
 				FDA1D1EA2540460B00BCD900 /* AppDelegate.swift in Sources */,
 				FDA1D1EC2540460B00BCD900 /* SceneDelegate.swift in Sources */,
-				FDA1D1EE2540460B00BCD900 /* ContentView.swift in Sources */,
+				FDA1D1EE2540460B00BCD900 /* LoginView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
