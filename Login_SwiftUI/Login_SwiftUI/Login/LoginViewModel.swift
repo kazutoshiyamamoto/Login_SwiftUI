@@ -11,6 +11,7 @@ class LoginViewModel: ObservableObject {
     @Published var id: String = ""
     @Published var password: String = ""
     @Published var isValidText: Bool = false
+    @Published var isLoginButtonTapped: Bool = false
     
     private var disposables = [AnyCancellable]()
     
