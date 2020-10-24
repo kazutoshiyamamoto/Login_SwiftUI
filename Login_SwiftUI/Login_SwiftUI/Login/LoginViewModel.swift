@@ -35,5 +35,13 @@ class LoginViewModel: ObservableObject {
                 }
             })
             .store(in: &disposables)
+        
+        $isLoginButtonTapped
+            .sink(receiveValue: {_ in
+                if !self.id.isEmpty && !self.password.isEmpty && self.isValidText == true {
+                    print("ログイン処理を呼び出す")
+                }
+            })
+            .store(in: &disposables)
     }
 }
