@@ -44,6 +44,7 @@ struct LoginView: View {
                         .background(Color.blue)
                         .cornerRadius(10, antialiased: true)
                 }
+                .disabled(viewModel.id.isEmpty || viewModel.password.isEmpty || !viewModel.isValidText)
             }
         }
     }
