@@ -29,6 +29,16 @@ struct LoginView: View {
             if !viewModel.isValidText {
                 Text("半角英数字で入力してください")
                     .foregroundColor(Color.red)
+            VStack(alignment: .center) {
+                Button(action: {
+                    viewModel.isLoginButtonTapped = true
+                }) {
+                    Text("ログイン")
+                        .frame(width: 200, height: 50)
+                        .foregroundColor(Color.white)
+                        .background(Color.blue)
+                        .cornerRadius(10, antialiased: true)
+                }
             }
         })
     }
