@@ -41,7 +41,7 @@ struct LoginView: View {
                     Text("ログイン")
                         .frame(width: 200, height: 50)
                         .foregroundColor(Color.white)
-                        .background(Color.blue)
+                        .background(!viewModel.id.isEmpty && !viewModel.password.isEmpty && viewModel.isValidText ? Color.blue : Color.gray)
                         .cornerRadius(10, antialiased: true)
                 }
                 .disabled(viewModel.id.isEmpty || viewModel.password.isEmpty || !viewModel.isValidText)
