@@ -15,20 +15,25 @@ struct LoginView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 25, content: {
-            Text("アカウントIDでログイン")
+        VStack {
+            VStack(alignment: .leading, spacing: 20, content: {
+                Text("アカウントIDでログイン")
+                
+                TextField("IDを入力", text: $viewModel.id)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .frame(width: 300)
+                
+                TextField("パスワードを入力", text: $viewModel.password)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .frame(width: 300)
+                
+                if !viewModel.isValidText {
+                    Text("半角英数字で入力してください")
+                        .foregroundColor(Color.red)
+                }
+            })
+            .padding(25)
             
-            TextField("IDを入力", text: $viewModel.id)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .frame(width: 300)
-            
-            TextField("パスワードを入力", text: $viewModel.password)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .frame(width: 300)
-            
-            if !viewModel.isValidText {
-                Text("半角英数字で入力してください")
-                    .foregroundColor(Color.red)
             VStack(alignment: .center) {
                 Button(action: {
                     viewModel.isLoginButtonTapped = true
@@ -40,7 +45,7 @@ struct LoginView: View {
                         .cornerRadius(10, antialiased: true)
                 }
             }
-        })
+        }
     }
 }
 
