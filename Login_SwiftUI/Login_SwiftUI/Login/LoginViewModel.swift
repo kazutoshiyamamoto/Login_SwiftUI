@@ -38,7 +38,7 @@ class LoginViewModel: ObservableObject {
         
         $isLoginButtonTapped
             .sink(receiveValue: {_ in
-                if !self.id.isEmpty && !self.password.isEmpty && self.isValidText == true {
+                if !self.id.isEmpty && !self.password.isEmpty && self.isValidText {
                     print("ログイン処理を呼び出す")
                 }
             })
