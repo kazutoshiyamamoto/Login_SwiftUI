@@ -16,8 +16,16 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
-            VStack(alignment: .leading, spacing: 20, content: {
+            VStack(alignment: .leading, spacing: 15, content: {
                 Text("アカウントIDでログイン")
+                    .font(.headline)
+                
+                // 入力文字が半角英数以外の場合はエラーメッセージを画面に表示
+                if !viewModel.isValidId || !viewModel.isValidPassword {
+                    Text("半角英数字で入力してください")
+                        .font(.subheadline)
+                        .foregroundColor(Color.red)
+                }
                 
                 // 入力した文字をLoginViewModelの変数idに通知
                 TextField("IDを入力", text: $viewModel.id)
@@ -28,14 +36,8 @@ struct LoginView: View {
                 TextField("パスワードを入力", text: $viewModel.password)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(width: 300)
-                
-                // 入力文字が半角英数以外の場合はエラーメッセージを画面に表示
-                if (!viewModel.isValidId && !viewModel.id.isEmpty) || (!viewModel.isValidPassword && !viewModel.password.isEmpty) {
-                    Text("半角英数字で入力してください")
-                        .foregroundColor(Color.red)
-                }
             })
-            .padding(25)
+            .padding(20)
             
             VStack(alignment: .center) {
                 Button(action: {
