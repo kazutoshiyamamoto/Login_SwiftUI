@@ -10,7 +10,11 @@ import Combine
 class LoginViewModel: ObservableObject {
     @Published var id: String = ""
     @Published var password: String = ""
-    @Published var isValidText: Bool = false
+    
+    // TextFieldに入力した文字が半角英数かどうか判別する変数
+    @Published var isValidId: Bool = false
+    @Published var isValidPassword: Bool = false
+    
     @Published var isLoginButtonTapped: Bool = false
     
     private var disposables = [AnyCancellable]()
@@ -18,28 +22,20 @@ class LoginViewModel: ObservableObject {
     init() {
         $id
             .sink(receiveValue: {
-                if !$0.isAlphanumeric && !$0.isEmpty {
-                    self.isValidText = false
-                } else {
-                    self.isValidText = true
-                }
+                self.isValidId = $0.isAlphanumeric && !$0.isEmpty ? true : false
             })
             .store(in: &disposables)
         
         $password
             .sink(receiveValue: {
-                if !$0.isAlphanumeric && !$0.isEmpty {
-                    self.isValidText = false
-                } else {
-                    self.isValidText = true
-                }
+                self.isValidPassword = $0.isAlphanumeric && !$0.isEmpty ? true : false
             })
             .store(in: &disposables)
         
         $isLoginButtonTapped
             .sink(receiveValue: {_ in
-                if !self.id.isEmpty && !self.password.isEmpty && self.isValidText {
-                    print("ログイン処理を呼び出す")
+                if self.isValidId && self.isValidPassword {
+                    print("ここでログイン処理を呼び出す")
                 }
             })
             .store(in: &disposables)
