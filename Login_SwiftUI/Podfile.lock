@@ -1,0 +1,18 @@
+PODS:
+  - LineSDKSwift (5.7.0):
+    - LineSDKSwift/Core (= 5.7.0)
+  - LineSDKSwift/Core (5.7.0)
+
+DEPENDENCIES:
+  - LineSDKSwift
+
+SPEC REPOS:
+  trunk:
+    - LineSDKSwift
+
+SPEC CHECKSUMS:
+  LineSDKSwift: f9c232f89185b887b5725aa278325f3a23e33bbc
+
+PODFILE CHECKSUM: 6b75ef88bf47389c9325dda3f3b87c67579a52b5
+
+COCOAPODS: 1.10.0
