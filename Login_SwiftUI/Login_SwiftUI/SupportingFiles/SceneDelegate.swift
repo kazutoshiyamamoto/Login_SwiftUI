@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import LineSDK
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -24,6 +25,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
         }
+    }
+    
+    // URLでアプリが開かれた場合に実行される
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        _ = LoginManager.shared.application(.shared, open: URLContexts.first?.url)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
