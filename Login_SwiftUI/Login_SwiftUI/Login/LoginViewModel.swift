@@ -33,8 +33,8 @@ class LoginViewModel: ObservableObject {
             .store(in: &disposables)
         
         $isLoginButtonTapped
-            .sink(receiveValue: {_ in
-                if self.isValidId && self.isValidPassword {
+            .sink(receiveValue: { isTapped in
+                if isTapped == true {
                     print("ここでログイン処理を呼び出す")
                 }
             })
