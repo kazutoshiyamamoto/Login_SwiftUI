@@ -17,16 +17,18 @@ struct LineLoginButton: UIViewRepresentable {
         }
         
         func loginButton(_ button: LoginButton, didSucceedLogin loginResult: LoginResult) {
-             print("Login Succeeded.")
-         }
-         
-         func loginButton(_ button: LoginButton, didFailLogin error: LineSDKError) {
-             print("Error: \(error)")
-         }
-         
-         func loginButtonDidStartLogin(_ button: LoginButton) {
-             print("Login Started.")
-         }
+            print("LINE認証成功")
+            print("アクセストークン:\(loginResult.accessToken.value)")
+            print("ここでログイン処理を呼び出す")
+        }
+        
+        func loginButton(_ button: LoginButton, didFailLogin error: LineSDKError) {
+            print("LINE認証エラー: \(error)")
+        }
+        
+        func loginButtonDidStartLogin(_ button: LoginButton) {
+            print("LINE認証開始")
+        }
     }
     
     func makeCoordinator() -> Coordinator {
