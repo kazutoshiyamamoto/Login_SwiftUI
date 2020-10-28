@@ -10,6 +10,7 @@
 		01E24388CD2C477A0AEA02E9 /* Pods_Login_SwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D66C2D5AC2B8A570AEFCC1A /* Pods_Login_SwiftUITests.framework */; };
 		7BAF88BA5F205ECF0D50CEAE /* Pods_Login_SwiftUI_Login_SwiftUIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B75EEE428710274ABE6C4ACC /* Pods_Login_SwiftUI_Login_SwiftUIUITests.framework */; };
 		96278B40BB8200A0B251B23B /* Pods_Login_SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE89BC1138D541A35312B9F /* Pods_Login_SwiftUI.framework */; };
+		FD55AE42254843830043E22C /* LineLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD55AE41254843820043E22C /* LineLoginButton.swift */; };
 		FD80114D2542C3B6008906A4 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD80114C2542C3B6008906A4 /* String+Extensions.swift */; };
 		FDA1D1EA2540460B00BCD900 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA1D1E92540460B00BCD900 /* AppDelegate.swift */; };
 		FDA1D1EC2540460B00BCD900 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA1D1EB2540460B00BCD900 /* SceneDelegate.swift */; };
@@ -49,6 +50,7 @@
 		B75EEE428710274ABE6C4ACC /* Pods_Login_SwiftUI_Login_SwiftUIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Login_SwiftUI_Login_SwiftUIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F05F6AC9E7DB588F6ED83955 /* Pods-Login_SwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login_SwiftUI.release.xcconfig"; path = "Target Support Files/Pods-Login_SwiftUI/Pods-Login_SwiftUI.release.xcconfig"; sourceTree = "<group>"; };
 		FC4432A6E8569F973BE763AF /* Pods-Login_SwiftUI-Login_SwiftUIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login_SwiftUI-Login_SwiftUIUITests.release.xcconfig"; path = "Target Support Files/Pods-Login_SwiftUI-Login_SwiftUIUITests/Pods-Login_SwiftUI-Login_SwiftUIUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FD55AE41254843820043E22C /* LineLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineLoginButton.swift; sourceTree = "<group>"; };
 		FD80114C2542C3B6008906A4 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		FDA1D1E62540460B00BCD900 /* Login_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Login_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDA1D1E92540460B00BCD900 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			children = (
 				FDA1D1ED2540460B00BCD900 /* LoginView.swift */,
 				FDA1D21F2542B3D700BCD900 /* LoginViewModel.swift */,
+				FD55AE41254843820043E22C /* LineLoginButton.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				FDA1D1EA2540460B00BCD900 /* AppDelegate.swift in Sources */,
 				FDA1D1EC2540460B00BCD900 /* SceneDelegate.swift in Sources */,
 				FDA1D1EE2540460B00BCD900 /* LoginView.swift in Sources */,
+				FD55AE42254843830043E22C /* LineLoginButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
