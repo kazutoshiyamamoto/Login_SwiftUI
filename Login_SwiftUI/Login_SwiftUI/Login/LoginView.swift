@@ -15,7 +15,7 @@ struct LoginView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 15) {
+        VStack(spacing: 15) {
             Text("アカウントIDでログイン")
                 .bold()
             
@@ -43,14 +43,12 @@ struct LoginView: View {
             // IDとパスワードがどちらも半角英数で入力されていればボタンを有効にする
             .disabled(!viewModel.isValidId || !viewModel.isValidPassword)
             .padding(EdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0))
-            .alignmentGuide(.leading) { _ in -50 }
             
             Text("LINEログイン")
                 .bold()
             
             LineLoginButton()
                 .frame(width: 200, height: 45)
-                .alignmentGuide(.leading) { _ in -50 }
         }
     }
 }
