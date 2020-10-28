@@ -44,6 +44,13 @@ struct LoginView: View {
             .disabled(!viewModel.isValidId || !viewModel.isValidPassword)
             .padding(EdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0))
             .alignmentGuide(.leading) { _ in -50 }
+            
+            Text("LINEログイン")
+                .bold()
+            
+            LineLoginButton()
+                .frame(width: 200, height: 45)
+                .alignmentGuide(.leading) { _ in -50 }
         }
     }
 }
