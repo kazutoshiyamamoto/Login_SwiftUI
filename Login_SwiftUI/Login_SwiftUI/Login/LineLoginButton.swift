@@ -30,10 +30,11 @@ struct LineLoginButton: UIViewRepresentable {
             print("LINE認証開始")
         }
     }
-    
-    // UIViewRepresentableに準拠した構造体LineLoginButtonはCoordinator型を定義できる
-    // Coordinator型はSwiftUIの仕組みで、
-    // UIViewRepresentableに準拠した構造体LineLoginButtonの状況（Context）の一部を他のSwiftUIのインターフェースに伝達できるようにするもの
+
+    // Coordinatorを作成するメソッド
+    // CoordinatorはUIViewRepresentableに準拠した構造体LineLoginButtonの状況（Context）の一部を
+    // 他のSwiftUIのインターフェースに伝達できるようにする
+    // そのため、作成したCoordinatorを使用して、デリゲート、データソース、ユーザーイベントへの応答などを実装できる
     // makeCoordinatorで生成したCoordinatorのインスタンスにはupdateUIViewの引数contextからアクセスできる
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
