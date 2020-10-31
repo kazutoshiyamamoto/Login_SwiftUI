@@ -68,10 +68,6 @@ struct LoginView: View {
                         // メールアドレスは初回しか取得できない
                         print("email:\(String(describing: appleIDCredential.email))")
                         
-                    case let passwordCredential as ASPasswordCredential:
-                        print("user:\(passwordCredential.user)")
-                        print("password:\(passwordCredential.password)")
-                        
                     default:
                         break
                     }
