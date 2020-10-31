@@ -11,7 +11,6 @@ import AuthenticationServices
 class LoginViewModel: ObservableObject {
     @Published var id: String = ""
     @Published var password: String = ""
-    
     // TextFieldに入力した文字が半角英数かどうか判別する変数
     @Published var isValidId: Bool = false
     @Published var isValidPassword: Bool = false
