@@ -6,6 +6,7 @@
 //
 
 import Combine
+import AuthenticationServices
 
 class LoginViewModel: ObservableObject {
     @Published var id: String = ""
@@ -16,6 +17,8 @@ class LoginViewModel: ObservableObject {
     @Published var isValidPassword: Bool = false
     
     @Published var isLoginButtonTapped: Bool = false
+    
+    @Published var appleAuthResults: Result<ASAuthorization, Error>?
     
     private var disposables = [AnyCancellable]()
     
@@ -36,6 +39,32 @@ class LoginViewModel: ObservableObject {
             .sink(receiveValue: { isTapped in
                 if isTapped == true {
                     print("ここでログイン処理を呼び出す")
+                }
+            })
+            .store(in: &disposables)
+        
+        $appleAuthResults
+            .sink(receiveValue: { results in
+                switch results {
+                case .success(let authResults):
+                    switch authResults.credential {
+                    case let appleIDCredential as ASAuthorizationAppleIDCredential:
+                        print("userIdentifier:\(appleIDCredential.user)")
+                        print("fullName:\(String(describing: appleIDCredential.fullName))")
+                        print("email:\(String(describing: appleIDCredential.email))")
+                        print("authorizationCode:\(String(describing: appleIDCredential.authorizationCode))")
+                        
+                        print("ここでログイン処理を呼び出す")
+                        
+                    default:
+                        break
+                    }
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    
+                default:
+                    break
                 }
             })
             .store(in: &disposables)

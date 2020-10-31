@@ -57,25 +57,8 @@ struct LoginView: View {
             
             SignInWithAppleButton(.signIn) { request in
                 request.requestedScopes = [.fullName, .email]
-            } onCompletion: { result in
-                switch result {
-                case .success(let authResults):
-                    switch authResults.credential {
-                    case let appleIDCredential as ASAuthorizationAppleIDCredential:
-                        print("userIdentifier:\(appleIDCredential.user)")
-                        // fullNameは初回しか取得できない
-                        print("fullName:\(String(describing: appleIDCredential.fullName))")
-                        // メールアドレスは初回しか取得できない
-                        print("email:\(String(describing: appleIDCredential.email))")
-                        print("email:\(String(describing: appleIDCredential.authorizationCode))")
-                        
-                    default:
-                        break
-                    }
-                    
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
+            } onCompletion: { authResults in
+                viewModel.appleAuthResults = authResults
             }
             .signInWithAppleButtonStyle(.black)
             .frame(width: 200, height: 45)
