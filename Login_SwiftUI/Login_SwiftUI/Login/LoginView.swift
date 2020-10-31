@@ -67,6 +67,7 @@ struct LoginView: View {
                         print("fullName:\(String(describing: appleIDCredential.fullName))")
                         // メールアドレスは初回しか取得できない
                         print("email:\(String(describing: appleIDCredential.email))")
+                        print("email:\(String(describing: appleIDCredential.authorizationCode))")
                         
                     default:
                         break
