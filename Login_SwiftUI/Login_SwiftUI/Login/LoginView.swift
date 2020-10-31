@@ -49,6 +49,10 @@ struct LoginView: View {
             
             LineLoginButton()
                 .frame(width: 200, height: 45)
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0))
+            
+            Text("Sign In with Apple")
+                .bold()
         }
     }
 }
