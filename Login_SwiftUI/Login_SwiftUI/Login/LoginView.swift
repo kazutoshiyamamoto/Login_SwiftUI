@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
@@ -53,6 +54,34 @@ struct LoginView: View {
             
             Text("Sign In with Apple")
                 .bold()
+            
+            SignInWithAppleButton(.signIn) { request in
+                request.requestedScopes = [.fullName, .email]
+            } onCompletion: { result in
+                switch result {
+                case .success(let authResults):
+                    switch authResults.credential {
+                    case let appleIDCredential as ASAuthorizationAppleIDCredential:
+                        print("userIdentifier:\(appleIDCredential.user)")
+                        // fullNameは初回しか取得できない
+                        print("fullName:\(String(describing: appleIDCredential.fullName))")
+                        // メールアドレスは初回しか取得できない
+                        print("email:\(String(describing: appleIDCredential.email))")
+                        
+                    case let passwordCredential as ASPasswordCredential:
+                        print("user:\(passwordCredential.user)")
+                        print("password:\(passwordCredential.password)")
+                        
+                    default:
+                        break
+                    }
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+            .signInWithAppleButtonStyle(.black)
+            .frame(width: 200, height: 45)
         }
     }
 }
